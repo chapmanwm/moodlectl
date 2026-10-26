@@ -12,9 +12,11 @@ Commands (all default to every tracked course):
   find REGEX [COURSE ...]     search synced text (slides, briefs, pages, announcements)
   assignment ID|URL           live assignment page: dates, status, brief
   get URL [--out DIR]         download any Moodle file/resource URL
-  auth set-cookie|import-cookie-file|status|clear   manage the MoodleSession cookie
+  login [--if-needed] [--no-mfa]   log in through UofG SSO in a headless browser (needs the [login] extra)
+  timetable [--days 7]        your class timetable, in UK local time
+  auth set-credentials|forget-credentials|set-cookie|import-cookie-file|status|clear
   legacy ...                  the old v1 CLI (dashboard, due-soon, course, calendar-export, ...)
-Exit codes: 0 ok, 1 error, 2 Moodle session expired (refresh the cookie with `moodlectl auth set-cookie`).
+Exit codes: 0 ok, 1 error, 2 Moodle session expired (run `moodlectl login`). `login` has its own codes (see `moodlectl login -h`).
 """
 from __future__ import annotations
 
@@ -31,6 +33,8 @@ from pathlib import Path
 from typing import Any
 
 from . import sync as S
+from . import login as L
+from . import timetable as T
 from .auth import extract_cookie_value
 from .web import DEFAULT_BASE_URL, AuthExpired, Moodle, MoodleError, config_path, filename_from_url, load_config, save_config
 
@@ -112,11 +116,9 @@ def cmd_status(args) -> int:
         info["moodle"] = "ok"
     except AuthExpired as exc:
         info["moodle"] = f"EXPIRED: {exc}"
-    # Optional: a login helper can publish its own state (JSON) for agents to see here.
-    helper_status_file = os.environ.get("MOODLECTL_AUTH_STATUS_FILE")
-    helper_status = S.read_json(Path(helper_status_file)) if helper_status_file else None
-    if helper_status:
-        info["auth_helper"] = helper_status
+    login_state = L.read_status()  # written by `moodlectl login` (or your own helper via MOODLECTL_AUTH_STATUS_FILE)
+    if login_state:
+        info["login"] = {k: login_state.get(k) for k in ("moodle_login_at", "mfa_pending", "mfa_number", "needs_human") if k in login_state}
     rows = []
     for code, c in load_tracked().items():
         idx = S.read_json(S.corpus_root() / code / "moodle" / "index.json", {}) or {}
@@ -391,6 +393,23 @@ def cmd_auth(args) -> int:
     if args.auth_cmd == "import-cookie-file":
         _save_cookie(extract_cookie_value(Path(args.path).expanduser().read_text()), args.base_url)
         return cmd_auth_status(args, verify=True)
+    if args.auth_cmd == "set-credentials":
+        creds = {"email": args.email or "", "password": "", "guid": args.guid or ""}
+        if args.password_stdin:
+            creds["password"] = sys.stdin.readline().rstrip("\n")
+        L.prompt_missing(creds, need_email=True, need_password=True)
+        if not (creds["email"] and creds["password"]):
+            raise MoodleError("email and password are both required")
+        path = L.save_credentials(creds["email"], creds["password"], creds["guid"])
+        print(f"Saved UofG credentials to {path} (mode 600). `moodlectl login` and `moodlectl timetable` will use them.")
+        return 0
+    if args.auth_cmd == "forget-credentials":
+        import shutil as _sh
+
+        L.credentials_path().unlink(missing_ok=True)
+        _sh.rmtree(L.profile_dir(), ignore_errors=True)
+        print(f"Removed saved credentials and the SSO browser profile from {L.secrets_dir()}.")
+        return 0
     if args.auth_cmd == "clear":
         p = config_path()
         cfg = load_config()
@@ -422,6 +441,28 @@ def cmd_auth_status(args, verify: bool = True) -> int:
         lines.append(f"Session: {info['session']}")
     emit(args, info, "\n".join(lines))
     return rc
+
+
+def cmd_login(args) -> int:
+    return L.login(if_needed=args.if_needed, force=args.force, timeout=args.timeout, no_mfa=args.no_mfa,
+                   headless=not args.headed, debug=args.debug)
+
+
+def cmd_timetable(args) -> int:
+    dest = S.meta_dir() / "timetable.ics"
+    if not args.offline:
+        creds = L.load_credentials()
+        if not creds["password"]:
+            L.prompt_missing(creds, need_email=True, need_password=True)
+        n = T.fetch(creds["guid"], creds["password"], dest)
+        print(f"timetable: {n} events saved to {dest}", file=sys.stderr)
+    elif not dest.exists():
+        raise MoodleError("No saved timetable yet; run `moodlectl timetable` without --offline.")
+    events = T.upcoming(T.parse_events(dest.read_text(errors="ignore")), args.days)
+    text = T.render(events, args.days)
+    (S.meta_dir() / "timetable.md").write_text(text)
+    emit(args, [T.to_json(e) for e in events], text.rstrip())
+    return 0
 
 
 def cmd_legacy(args) -> int:
@@ -457,6 +498,22 @@ def build_parser() -> argparse.ArgumentParser:
     s.add_argument("--offline", action="store_true", help="don't contact Moodle")
     s.add_argument("--verify", action="store_true", help=argparse.SUPPRESS)  # v1 compat; verification is the default
     a.add_parser("clear", help="forget the stored cookie")
+    s = a.add_parser("set-credentials", help="save your UofG email + password (mode 600) for `login` and `timetable`")
+    s.add_argument("--email"); s.add_argument("--guid", help="timetable login if it isn't the part of your email before @")
+    s.add_argument("--password-stdin", action="store_true", help="read the password from the first line of stdin")
+    a.add_parser("forget-credentials", help="delete saved credentials and the SSO browser profile")
+    s = sub.add_parser("login", help="log in via UofG SSO in a headless browser and save the session",
+                       description=L.__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    s.add_argument("--if-needed", action="store_true", help="exit 0 straight away if the current session still works")
+    s.add_argument("--no-mfa", action="store_true", help="for unattended runs: give up (exit 3) instead of starting an MFA request")
+    s.add_argument("--force", action="store_true", help="ignore the cooldown after a failed MFA request")
+    s.add_argument("--timeout", type=int, default=300, help="seconds (default 300)")
+    s.add_argument("--headed", action="store_true", help="show the browser window")
+    s.add_argument("--debug", action="store_true", help="print page text and save screenshots to <config>/login-debug/")
+    s.set_defaults(fn=cmd_login)
+    s = sub.add_parser("timetable", help="class timetable for the next N days (UK local time)")
+    s.add_argument("--days", type=int, default=7); s.add_argument("--offline", action="store_true", help="use the last download")
+    s.set_defaults(fn=cmd_timetable)
     sub.choices["auth"].set_defaults(fn=cmd_auth)
     s = sub.add_parser("legacy"); s.add_argument("rest", nargs=argparse.REMAINDER); s.set_defaults(fn=cmd_legacy)
     return p
@@ -478,6 +535,9 @@ def main(argv: list[str] | None = None) -> int:
     except AuthExpired as exc:
         print(f"AUTH_EXPIRED: {exc}", file=sys.stderr)
         return 2
+    except L.LoginError as exc:
+        print(f"LOGIN_FAILED: {exc}", file=sys.stderr)
+        return exc.code
     except MoodleError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

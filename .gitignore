@@ -22,3 +22,7 @@ moodle-corpus/
 corpus/
 _moodle/
 _downloads/
+credentials.json
+login-status.json
+login-debug/
+sso-profile/

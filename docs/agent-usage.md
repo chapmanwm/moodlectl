@@ -38,7 +38,7 @@ moodlectl get <pluginfile-or-resource-url> --out ./downloads
 |---|---|---|
 | 0 | ok | use stdout |
 | 1 | error (bad course name, network, parse failure) | read stderr; don't retry blindly |
-| 2 | Moodle session expired / no cookie | stop and ask the human to refresh the cookie (`moodlectl auth set-cookie`). Never loop. |
+| 2 | Moodle session expired / no cookie | run `moodlectl login --if-needed` once; relay any `MFA_NUMBER nn` to the human. Never loop (see [authentication](authentication.md)). |
 
 Payloads go to stdout and diagnostics to stderr. With `--json`, stdout is a single JSON document.
 

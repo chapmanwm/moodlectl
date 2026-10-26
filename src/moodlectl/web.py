@@ -44,7 +44,7 @@ class AuthExpired(MoodleError):
 
     def __init__(self, detail: str = "") -> None:
         hint = "Moodle session has expired or was rejected. " + os.environ.get(
-            "MOODLECTL_REAUTH_HINT", "Refresh the session cookie (`moodlectl auth set-cookie --stdin` or `moodlectl auth import-cookie-file`)."
+            "MOODLECTL_REAUTH_HINT", "Run `moodlectl login` (or paste a fresh cookie with `moodlectl auth set-cookie`)."
         )
         super().__init__(f"{hint}{' (' + detail + ')' if detail else ''}")
 

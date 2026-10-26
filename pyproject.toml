@@ -1,6 +1,6 @@
 [project]
 name = "moodlectl"
-version = "2.0.0"
+version = "2.1.0"
 description = "Unofficial CLI for University of Glasgow Moodle: mirror courses (files, folders, pages, assignments, announcements, grades) into a local, diffable corpus"
 readme = "README.md"
 license = { text = "MIT" }
@@ -20,6 +20,7 @@ dependencies = ["requests>=2.31.0", "beautifulsoup4>=4.12", "lxml>=5"]
 
 [project.optional-dependencies]
 office = ["python-pptx", "openpyxl", "python-docx", "pypdf>=4"]
+login = ["camoufox>=0.4.11,<0.5"]  # 0.5.x: fingerprint generator rejects os lists; also wipes 0.4 installs
 dev = ["pytest>=7"]
 
 [project.urls]
