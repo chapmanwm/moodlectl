@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" xml:lang="en">
+<head>
+<title>Dashboard | Moodle</title>
+<link href="https://moodle.example/theme/image.php/hillhead40/theme/999999/favicon" rel="shortcut icon"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="moodle, Dashboard | Moodle" name="keywords"/>
+<script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script>
+<script>
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle.example","apibase":"https:\/\/moodle.example\/r.php\/api","homeurl":{},"sesskey":"fixture-sesskey","sessiontimeout":"999999","sessiontimeoutwarning":1200,"themerev":"999999","slasharguments":1,"theme":"hillhead40","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"999999","admin":"admin","svgicons":true,"usertimezone":"Europe\/London","language":"en","courseId":1,"courseContextId":2,"contextid":999999,"contextInstanceId":999999,"langrev":999999,"templaterev":"999999","siteId":1,"userId": 999999};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle.example\/lib\/yuilib\/3.18.1\/","comboBase":"https:\/\/moodle.example\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle.example\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle.example\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle.example\/theme\/yui_combo.php?m\/999999\/","combine":true,"comboBase":"https:\/\/moodle.example\/theme\/yui_combo.php?","ext":false,"root":"m\/999999\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_musictheory-musictheorykeyboardui":{"requires":["base","node","datatype"]},"moodle-qtype_musictheory-musictheoryqtype":{"requires":["base","node","datatype","node-event-simulate"]},"moodle-qtype_musictheory-musictheoryui":{"requires":["base","node","datatype","panel","dd-plugin"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_checklist-linkselect":{"requires":["node","event-valuechange"]},"moodle-mod_customcert-rearrange":{"requires":["dd-delegate","dd-drag"]},"moodle-mod_hsuforum-article":{"requires":["base","node","event","router","core_rating","querystring","moodle-mod_hsuforum-io","moodle-mod_hsuforum-livelog"]},"moodle-mod_hsuforum-io":{"requires":["base","io-base","io-form","io-upload-iframe","json-parse"]},"moodle-mod_hsuforum-livelog":{"requires":["widget"]},"moodle-mod_oublog-savecheck":{"requires":["base","node","io","panel","moodle-core-notification-alert"]},"moodle-mod_oublog-tagselector":{"requires":["base","node","autocomplete","autocomplete-filters","autocomplete-highlighters"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form","datatype-date-format"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_xp-filters":{"requires":["base","node","moodle-core-dragdrop","moodle-core-notification-confirm","moodle-block_xp-rulepicker"]},"moodle-block_xp-notification":{"requires":["base","node","handlebars","button-plugin","moodle-core-notification-dialogue"]},"moodle-block_xp-rulepicker":{"requires":["base","node","handlebars","moodle-core-notification-dialogue"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-qbank_editquestion-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-local_kaltura-lticontainer":{"requires":["base","node"]},"moodle-local_kaltura-ltipanel":{"requires":["base","node","panel","node-event-simulate"]},"moodle-local_kaltura-ltiservice":{"requires":["base","node","node-event-simulate"]},"moodle-local_kaltura-ltitinymcepanel":{"requires":["base","node","panel","node-event-simulate"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_echo360attoplugin-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emojipicker-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_generico-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_h5p-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_html-beautify":{},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_kalturamedia-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_teamsmeeting-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle.example\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle.example\/theme\/yui_combo.php?","ext":false,"root":"gallery\/999999\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle.example\/lib\/javascript.php\/999999\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle.example\/lib\/javascript.php\/999999\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]}},"logInclude":[],"logExclude":[],"logLevel":null};
+M.yui.loader = {modules: {}};
+//]]>
+</script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body class="limitedwidth format-site path-my dir-ltr lang-en yui-skin-sam yui3-skin-sam moodle-gla-ac-uk pagelayout-mydashboard course-1 context-999999 theme uses-drawers drawer-open-index" id="page-my-index">
+<div aria-live="polite" class="toast-wrapper mx-auto py-0 fixed-top" role="status"></div>
+<div class="d-print-block" id="page-wrapper">
+<div>
+<a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div><script src="https://moodle.example/lib/javascript.php/999999/lib/polyfills/polyfill.js"></script>
+<script src="https://moodle.example/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.js"></script><script src="https://moodle.example/theme/jquery.php/core/jquery-3.7.1.min.js"></script>
+<script src="https://moodle.example/lib/javascript.php/999999/lib/javascript-static.js"></script>
+<script>
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+<nav aria-label="Student Example" class="navbar fixed-top navbar-light bg-white navbar-expand">
+<div class="container-fluid">
+<button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-action="toggle" data-target="theme_boost-drawers-primary" data-toggler="drawers">
+<span class="navbar-toggler-icon"></span>
+<span class="sr-only">Side panel</span>
+</button>
+<a class="navbar-brand d-none d-md-flex align-items-center m-0 me-4 p-0 aabtn" href="https://moodle.example/my/">
+                    Moodle
+            </a>
+<div class="primary-navigation">
+<nav class="moremenu navigation">
+<ul class="nav more-nav navbar-nav" id="moremenu-69d7a9198819b-navbar-nav" role="menubar">
+<li class="nav-item" data-forceintomoremenu="false" data-key="home" role="none">
+<a class="nav-link" data-disableactive="true" href="https://moodle.example/?redirect=0" role="menuitem" tabindex="-1">
+                                                    Home
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="myhome" role="none">
+<a aria-current="true" class="nav-link active" data-disableactive="true" href="https://moodle.example/my/" role="menuitem">
+                                                    Dashboard
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="mycourses" role="none">
+<a class="nav-link" data-disableactive="true" href="https://moodle.example/my/courses.php" role="menuitem" tabindex="-1">
+                                                    My courses
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://moodle.example/blocks/newgu_spdetails/index.php" role="menuitem" tabindex="-1">
+                                                    MyGrades (BETA)
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://moodle.example/local/mymedia/mymedia.php" role="menuitem" tabindex="-1">
+                                                    My Media
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://moodle.example/theme/hillhead40/accessibility.php?o=theme_hillhead40_accessibility&amp;v=on" role="menuitem" tabindex="-1">
+                                                    Accessibility Tool
+                                                </a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://glasgow.saasiteu.com/" role="menuitem" tabindex="-1" target="_blank">
+                                                    Help
+                                                </a>
+</li>
+<li class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton" role="none">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" id="moremenu-dropdown-69d7a9198819b" role="menuitem" tabindex="-1">
+                                    More
+                                </a>
+<ul aria-labelledby="moremenu-dropdown-69d7a9198819b" class="dropdown-menu dropdown-menu-left" data-region="moredropdown" role="menu">
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<ul class="navbar-nav d-none d-md-flex my-1 px-1">
+<!-- page_heading_menu -->
+</ul>
+<div class="navbar-nav ms-auto h-100" id="usernavigation">
+<div class="simplesearchform" id="searchinput-navbar-69d7a91aebf3969d7a919707767">
+<div class="collapse" id="searchform-navbar">
+<form accept-charset="utf-8" action="https://moodle.example/search/index.php" autocomplete="off" class="mform d-flex flex-wrap align-items-center searchform-navbar" method="get">
+<input name="context" type="hidden" value="999999"/>
+<div aria-labelledby="searchgrouplabel-69d7a91aebf3969d7a919707767" class="input-group" role="group">
+<span class="sr-only" id="searchgrouplabel-69d7a91aebf3969d7a919707767">Site-wide search</span>
+<label for="searchinput-69d7a91aebf3969d7a919707767">
+<span class="sr-only">Search</span>
+</label>
+<input aria-label="Student Example" autocomplete="off" class="form-control withclear" data-region="input" id="searchinput-69d7a91aebf3969d7a919707767" name="q" placeholder="Search" type="text"/>
+<a class="btn btn-close" data-action="closesearch" data-toggle="collapse" href="#searchform-navbar" role="button" title="Close">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+<span class="sr-only">Close</span>
+</a>
+<div class="input-group-append">
+<button class="btn btn-submit" data-action="submit" title="Perform search" type="submit">
+<i aria-hidden="true" class="icon fa fa-magnifying-glass fa-fw"></i>
+<span class="sr-only">Perform search</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<a aria-controls="searchform-navbar" aria-expanded="false" class="btn btn-open rounded-0 nav-link" data-action="opensearch" data-toggle="collapse" href="#searchform-navbar" role="button" title="Toggle search input">
+<i aria-hidden="true" class="icon fa fa-magnifying-glass fa-fw"></i>
+<span class="sr-only">Toggle search input</span>
+</a>
+</div>
+<div class="divider border-start h-75 align-self-center mx-1"></div>
+<div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+<div class="usermenu">
+<div class="dropdown show">
+<a aria-controls="user-action-menu" aria-haspopup="true" aria-label="Student Example" class="btn dropdown-toggle" data-toggle="dropdown" href="#" id="user-menu-toggle" role="button">
+<span class="userbutton">
+<span class="avatars">
+<span class="avatar current">
+<span aria-label="Student Example" class="userinitials size-35" role="img" title="Student Example">SE</span>
+</span>
+</span>
+</span>
+</a>
+<div class="dropdown-menu dropdown-menu-right" id="user-action-menu">
+<div class="carousel slide" data-interval="false" data-keyboard="false" data-touch="false" id="usermenu-carousel">
+<div class="carousel-inner">
+<div aria-label="Student Example" class="carousel-item active" id="carousel-item-main" role="menu" tabindex="-1">
+<a class="dropdown-item" href="https://moodle.example/user/profile.php" role="menuitem" tabindex="-1">
+                                                                Profile
+                                                            </a>
+<a class="dropdown-item" href="https://moodle.example/calendar/view.php?view=month" role="menuitem" tabindex="-1">
+                                                                Calendar
+                                                            </a>
+<a class="dropdown-item" href="https://moodle.example/user/files.php" role="menuitem" tabindex="-1">
+                                                                Private files
+                                                            </a>
+<a class="dropdown-item" href="https://moodle.example/reportbuilder/index.php" role="menuitem" tabindex="-1">
+                                                                Reports
+                                                            </a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="https://moodle.example/user/preferences.php" role="menuitem" tabindex="-1">
+                                                                Preferences
+                                                            </a>
+<div class="dropdown-divider"></div>
+<a class="dropdown-item" href="https://moodle.example/login/logout.php?sesskey=fixture-token" role="menuitem" tabindex="-1">
+                                                                Log out
+                                                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="divider border-start h-75 align-self-center ms-1 me-3"></div>
+<form action="https://moodle.example/editmode.php" class="d-flex align-items-center editmode-switch-form" method="post">
+<div class="input-group">
+<label class="me-2 mb-0" for="69d7a91aef8ae69d7a9197077610-editingswitch">
+            Edit mode
+        </label>
+<div class="custom-control custom-switch">
+<input class="custom-control-input" data-context="999999" data-pageurl="https://moodle.example/my/index.php" id="69d7a91aef8ae69d7a9197077610-editingswitch" name="setmode" type="checkbox"/>
+<span class="custom-control-label"> </span>
+</div>
+</div>
+<input name="sesskey" type="hidden" value="fixture-sesskey"/>
+<input name="pageurl" type="hidden" value="https://moodle.example/my/index.php"/>
+<input name="context" type="hidden" value="999999"/>
+</form>
+</div>
+</div>
+</nav>
+<div class="drawer drawer-left drawer-primary d-print-none not-initialized" data-close-on-resize="1" data-forceopen="0" data-preference="" data-region="fixed-drawer" data-state="show-drawer-primary" id="theme_boost-drawers-primary">
+<div class="drawerheader">
+<button class="btn drawertoggle icon-no-margin hidden" data-action="closedrawer" data-placement="right" data-target="theme_boost-drawers-primary" data-toggle="tooltip" data-toggler="drawers" title="Close drawer">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+</button>
+<a class="aabtn text-reset d-flex align-items-center py-1 h-100" data-region="site-home-link" href="https://moodle.example/my/" title="Moodle">
+<span class="sitename" title="Moodle">Moodle</span>
+</a>
+<div class="drawerheadercontent hidden">
+</div>
+</div>
+<div class="drawercontent drag-container" data-usertour="scroller">
+<div class="list-group">
+<a class="list-group-item list-group-item-action" href="https://moodle.example/?redirect=0">
+                    Home
+                </a>
+<a aria-current="true" class="list-group-item list-group-item-action active" href="https://moodle.example/my/">
+                    Dashboard
+                </a>
+<a class="list-group-item list-group-item-action" href="https://moodle.example/my/courses.php">
+                    My courses
+                </a>
+<a class="list-group-item list-group-item-action" href="https://moodle.example/blocks/newgu_spdetails/index.php">
+                    MyGrades (BETA)
+                </a>
+<a class="list-group-item list-group-item-action" href="https://moodle.example/local/mymedia/mymedia.php">
+                    My Media
+                </a>
+<a class="list-group-item list-group-item-action" href="https://moodle.example/theme/hillhead40/accessibility.php?o=theme_hillhead40_accessibility&amp;v=on">
+                    Accessibility Tool
+                </a>
+<a class="list-group-item list-group-item-action" href="https://glasgow.saasiteu.com/" target="_blank">
+                    Help
+                </a>
+</div>
+</div>
+</div>
+<div class="drawer drawer-right show d-print-none not-initialized" data-close-on-resize="1" data-forceopen="" data-preference="drawer-open-block" data-region="fixed-drawer" data-state="show-drawer-right" id="theme_boost-drawers-blocks">
+<div class="drawerheader">
+<button class="btn drawertoggle icon-no-margin hidden" data-action="closedrawer" data-placement="left" data-target="theme_boost-drawers-blocks" data-toggle="tooltip" data-toggler="drawers" title="Close block drawer">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+</button>
+<div class="drawerheadercontent hidden">
+</div>
+</div>
+<div class="drawercontent drag-container" data-usertour="scroller">
+<section aria-label="Student Example" class="d-print-none">
+<aside aria-labelledby="side-pre-block-region-heading" class="block-region" data-blockregion="side-pre" data-droptarget="1" id="block-region-side-pre"><h2 class="sr-only" id="side-pre-block-region-heading">Blocks</h2><a class="sr-only sr-only-focusable" href="#sb-1">Skip Timeline</a>
+<section aria-labelledby="instance-999999-header" class="block_timeline block card mb-3" data-block="timeline" data-instance-id="999999" id="inst4970182" role="region">
+<div class="card-body p-3">
+<h3 class="h5 card-title d-inline" id="instance-999999-header">Timeline</h3>
+<div class="card-text content mt-3">
+<div class="block-timeline" data-region="timeline" id="block-timeline-69d7a9197077469d7a919707761-1">
+<div class="p-0 px-2">
+<div class="row g-0">
+<div class="me-2 mb-1">
+<div class="dropdown mb-1" data-region="day-filter">
+<button aria-controls="menudayfilter" aria-describedby="timeline-day-filter-current-selection" aria-expanded="false" aria-haspopup="true" aria-label="Student Example" class="btn btn-outline-secondary dropdown-toggle icon-no-margin" data-toggle="dropdown" title="Filter timeline by date" type="button">
+<span data-active-item-text="" id="timeline-day-filter-current-selection">
+                             Next 7 days 
+                        </span>
+</button>
+<div class="dropdown-menu" data-show-active-item="" data-skip-active-class="true" id="menudayfilter" role="menu">
+<a aria-label="Student Example" class="dropdown-item" data-filtername="all" data-from="-14" href="#" role="menuitem">
+                            All
+                        </a>
+<a aria-label="Student Example" class="dropdown-item" data-filtername="overdue" data-from="-14" data-to="1" href="#" role="menuitem">
+                            Overdue
+                        </a>
+<div class="dropdown-divider" role="separator"></div>
+<h6 class="dropdown-header">Due date</h6>
+<a aria-current="true" aria-label="Student Example" class="dropdown-item" data-filtername="next7days" data-from="0" data-to="7" href="#" role="menuitem">
+                            Next 7 days
+                        </a>
+<a aria-label="Student Example" class="dropdown-item" data-filtername="next30days" data-from="0" data-to="30" href="#" role="menuitem">
+                            Next 30 days
+                        </a>
+<a aria-label="Student Example" class="dropdown-item" data-filtername="next3months" data-from="0" data-to="90" href="#" role="menuitem">
+                            Next 3 months
+                        </a>
+<a aria-label="Student Example" class="dropdown-item" data-filtername="next6months" data-from="0" data-to="180" href="#" role="menuitem">
+                            Next 6 months
+                        </a>
+</div>
+</div>
+</div>
+<div class="me-auto mb-1">
+<div class="btn-group mb-1" data-region="view-selector">
+<button aria-controls="menusortby" aria-describedby="timeline-view-selector-current-selection" aria-expanded="false" aria-haspopup="true" aria-label="Student Example" class="btn btn-outline-secondary dropdown-toggle icon-no-margin" data-toggle="dropdown" title="Sort timeline items" type="button">
+<span data-active-item-text="" id="timeline-view-selector-current-selection">
+                            Sort by dates
+                        </span>
+</button>
+<div class="dropdown-menu dropdown-menu-right list-group hidden" data-show-active-item="" data-skip-active-class="true" id="menusortby" role="menu">
+<a aria-current="true" aria-label="Student Example" class="dropdown-item" data-filtername="sortbydates" data-toggle="tab" href="#view_dates_69d7a9197077469d7a919707761-1" role="menuitem">
+                            Sort by dates
+                        </a>
+<a aria-label="Student Example" class="dropdown-item" data-filtername="sortbycourses" data-toggle="tab" href="#view_courses_69d7a9197077469d7a919707761-1" role="menuitem">
+                            Sort by courses
+                        </a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-sm-8 col-12 mb-1 d-flex justify-content-end nav-search">
+<div class="w-100">
+<div class="d-flex flex-wrap align-items-center simplesearchform" id="searchform-auto-69d7a9197077469d7a919707761">
+<div class="input-group searchbar w-100" role="search">
+<label for="searchinput-69d7a9197077469d7a919707761">
+<span class="sr-only">Search by activity type or name</span>
+</label>
+<input autocomplete="off" class="form-control withclear rounded" data-action="search" data-region="input" id="searchinput-69d7a9197077469d7a919707761" name="search" placeholder="Search by activity type or name" type="text" value=""/>
+<button class="btn btn-clear d-none" data-action="clearsearch" type="button">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+<span class="sr-only">Clear search input</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="pb-3 px-2 border-bottom"></div>
+</div>
+<div class="p-0">
+<div data-region="timeline-view">
+<div class="tab-content">
+<div class="tab-pane active show fade" data-limit="5" data-region="view-dates" id="view_dates_69d7a9197077469d7a919707761-1">
+<div data-region="timeline-view-dates">
+<div data-course-id="" data-days-limit="7" data-days-offset="0" data-midnight="999999" data-region="event-list-container">
+<div data-region="event-list-loading-placeholder">
+<ul class="ps-0 list-group list-group-flush">
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<div class="pt-3 pb-2 d-flex justify-content-between">
+<div class="w-25 bg-pulse-grey" style="height: 35px"></div>
+</div>
+</div>
+<div data-region="event-list-content"></div>
+<div class="hidden text-xs-center text-center mt-3" data-region="no-events-empty-message">
+<img alt="" src="https://moodle.example/theme/image.php/hillhead40/block_timeline/999999/activities" style="height: 70px; width: 70px"/>
+<p class="text-muted mt-1">No activities require action</p>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" data-days-limit="7" data-days-offset="0" data-limit="2" data-midnight="999999" data-no-events-url="https://moodle.example/theme/image.php/hillhead40/block_timeline/999999/activities" data-offset="0" data-region="view-courses" id="view_courses_69d7a9197077469d7a919707761-1">
+<div data-region="course-items-loading-placeholder">
+<ul class="list-group unstyled">
+<li class="list-group-item mt-3 p-0 px-2 border-0">
+<div class="w-50 bg-pulse-grey mt-1 mb-2" style="height: 20px"></div>
+<div>
+<ul class="ps-0 list-group list-group-flush">
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<div class="pt-3 pb-2 d-flex justify-content-between">
+<div class="w-25 bg-pulse-grey" style="height: 35px"></div>
+</div>
+</div>
+</li>
+<li class="list-group-item mt-3 p-0 px-2 border-0">
+<div class="w-50 bg-pulse-grey mt-1 mb-2" style="height: 20px"></div>
+<div>
+<ul class="ps-0 list-group list-group-flush">
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+<li class="list-group-item px-2">
+<div class="row">
+<div class="col-8 pe-0">
+<div class="d-flex flex-row align-items-center" style="height: 32px">
+<div class="bg-pulse-grey rounded-circle" style="height: 32px; width: 32px;"></div>
+<div class="ps-2" style="flex: 1">
+<div class="bg-pulse-grey w-100" style="height: 15px;"></div>
+<div class="bg-pulse-grey w-75 mt-1" style="height: 10px;"></div>
+</div>
+</div>
+</div>
+<div class="col-4 pe-3">
+<div class="d-flex flex-row justify-content-end" style="height: 32px; padding-top: 2px">
+<div class="bg-pulse-grey w-75" style="height: 15px;"></div>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<div class="pt-3 pb-2 d-flex justify-content-between">
+<div class="w-25 bg-pulse-grey" style="height: 35px"></div>
+</div>
+</div>
+</li>
+</ul>
+<div class="bg-pulse-grey mt-1" style="width: 100px; height: 30px; margin-left: auto; margin-right: auto"></div>
+</div>
+<ul class="list-group unstyled" data-region="courses-list"></ul>
+<div class="hidden text-xs-center text-center pt-3" data-region="more-courses-button-container">
+<button class="btn btn-primary" data-action="more-courses" type="button">
+                            Show more courses
+                            <span class="hidden" data-region="loading-icon-container">
+<span class="loading-icon icon-no-margin"><i aria-label="Student Example" class="icon fa fa-spinner fa-spin fa-fw" role="img" title="Loading"></i></span>
+</span>
+</button>
+</div>
+<div class="hidden text-xs-center text-center mt-3" data-region="no-events-empty-message">
+<img alt="" src="https://moodle.example/theme/image.php/hillhead40/block_timeline/999999/activities" style="height: 70px; width: 70px"/>
+<p class="text-muted mt-1">No activities require action</p>
+</div>
+</div>
+</div>
+</div> </div>
+</div>
+<div class="footer"></div>
+</div>
+</div>
+</section>
+<span id="sb-1"></span></aside>
+</section>
+</div>
+</div>
+<div class="drawers show-drawer-right drag-container" data-region="mainpage" data-usertour="scroller" id="page">
+<div class="main-inner" id="topofscroll">
+<div class="drawer-toggles d-flex">
+<div class="drawer-toggler drawer-right-toggle ml-auto d-print-none">
+<button class="btn icon-no-margin" data-action="toggle" data-placement="right" data-target="theme_boost-drawers-blocks" data-toggle="tooltip" data-toggler="drawers" title="Open block drawer">
+<span class="sr-only">Open block drawer</span>
+<span class="dir-rtl-hide"><i aria-hidden="true" class="icon fa fa-chevron-left fa-fw"></i></span>
+<span class="dir-ltr-hide"><i aria-hidden="true" class="icon fa fa-chevron-right fa-fw"></i></span>
+</button>
+</div>
+</div>
+<header class="header-maxwidth d-print-none" id="page-header">
+<div class="w-100">
+<div class="d-flex flex-wrap">
+<div class="ms-auto d-flex">
+</div>
+<div id="course-header">
+</div>
+</div>
+<div class="d-flex align-items-center">
+<div class="me-auto d-flex flex-column">
+<div>
+<div class="page-context-header d-flex flex-wrap align-items-center mb-2">
+<div class="page-header-headings">
+<h1 class="h2 mb-0">Dashboard</h1>
+</div>
+</div>
+</div>
+<div>
+</div>
+</div>
+<div class="header-actions-container ms-auto" data-region="header-actions-container">
+</div>
+</div>
+</div>
+</header>
+<div class="pb-3 d-print-block" id="page-content">
+<div id="region-main-box">
+<section aria-label="Student Example" id="region-main">
+<span class="notifications" id="user-notifications"></span>
+<div role="main"><span id="maincontent"></span><section aria-labelledby="content-block-region-heading" class="block-region" data-blockregion="content" data-droptarget="1" id="block-region-content"><h2 class="sr-only" id="content-block-region-heading">Main content blocks</h2><a class="sr-only sr-only-focusable" href="#sb-2">Skip Starred courses</a>
+<section aria-labelledby="instance-999999-header" class="block_starredcourses block card mb-3" data-block="starredcourses" data-instance-id="999999" id="inst4970181" role="region">
+<div class="card-body p-3">
+<h3 class="h5 card-title d-inline" id="instance-999999-header">Starred courses</h3>
+<div class="card-text content mt-3">
+<div class="block-starredcourses block-cards" data-displaycoursecategory="1" data-region="starred-courses" id="block-starredcourses-69d7a9198934a69d7a919707763">
+<div class="container-fluid p-0">
+<div data-nocoursesimg="https://moodle.example/theme/image.php/hillhead40/block_starredcourses/999999/courses" data-region="starred-courses-view" id="starred-courses-view-69d7a9198934a69d7a919707763">
+<div data-region="starred-courses-view-content">
+<div data-region="starred-courses-loading-placeholder">
+<div class="card-grid mx-0 row row-cols-1 row-cols-sm-2 row-cols-lg-3 flex-nowrap overflow-hidden" style="height: 11.1rem">
+<div class="col p-0"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+<div class="col p-0"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+<div class="col p-0"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"></div>
+</div>
+</div>
+</section>
+<span id="sb-2"></span><a class="sr-only sr-only-focusable" href="#sb-3">Skip Course overview</a>
+<section aria-labelledby="instance-999999-header" class="block_myoverview block card mb-3" data-block="myoverview" data-instance-id="999999" id="inst5022700" role="region">
+<div class="card-body p-3">
+<h3 class="h5 card-title d-inline" id="instance-999999-header">Course overview</h3>
+<div class="card-text content mt-3">
+<div class="block-myoverview block-cards" data-region="myoverview" id="block-myoverview-69d7a9199584e69d7a919707764" role="navigation">
+<div aria-label="Student Example" class="d-flex align-items-center my-2" data-region="filter" role="search">
+<div class="row g-0">
+<div class="dropdown mb-1 me-1">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Student Example" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" id="groupingdropdown" type="button">
+<span data-active-item-text="">
+                        All
+                    </span>
+</button>
+<ul aria-labelledby="groupingdropdown" class="dropdown-menu" data-active-item-text="" data-show-active-item="" data-skip-active-class="true" role="menu">
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="allincludinghidden" data-value="allincludinghidden" href="#" role="menuitem">
+                            All (including removed from view)
+                        </a>
+</li>
+<li class="dropdown-divider" role="presentation">
+<span class="filler"> </span>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-current="true" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="all" data-value="all" href="#" role="menuitem">
+                            All
+                        </a>
+</li>
+<li class="dropdown-divider" role="presentation">
+<span class="filler"> </span>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="inprogress" data-value="inprogress" href="#" role="menuitem">
+                            In progress
+                        </a>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="future" data-value="future" href="#" role="menuitem">
+                            Future
+                        </a>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="past" data-value="past" href="#" role="menuitem">
+                            Past
+                        </a>
+</li>
+<li class="dropdown-divider" role="presentation">
+<span class="filler"> </span>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="favourites" data-value="favourites" href="#" role="menuitem">
+                            Starred
+                        </a>
+</li><li class="dropdown-divider" role="presentation">
+<span class="filler"> </span>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-filter="grouping" data-pref="hidden" data-value="hidden" href="#" role="menuitem">
+                            Removed from view
+                        </a>
+</li>
+</ul>
+</div>
+<div class="mb-1 me-1 flex-grow-1">
+<div class="d-flex flex-wrap align-items-center simplesearchform" id="searchform-auto-69d7a9199584e69d7a919707764">
+<div class="input-group searchbar w-100" role="search">
+<label for="searchinput-69d7a9199584e69d7a919707764">
+<span class="sr-only">Search courses</span>
+</label>
+<input autocomplete="off" class="form-control withclear rounded" data-action="search" data-region="input" id="searchinput-69d7a9199584e69d7a919707764" name="search" placeholder="Search" type="text" value=""/>
+<button class="btn btn-clear d-none" data-action="clearsearch" type="button">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+<span class="sr-only">Clear search input</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mb-1 me-1 d-flex flex-wrap align-items-center">
+<div class="dropdown">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Student Example" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" id="sortingdropdown" type="button">
+<span data-active-item-text="">
+                            Sort by course name
+                        </span>
+</button>
+<ul aria-labelledby="sortingdropdown" class="dropdown-menu" data-show-active-item="" data-skip-active-class="true" role="menu">
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-current="true" class="dropdown-item" data-filter="sort" data-pref="title" data-value="fullname" href="#" role="menuitem">
+                                Sort by course name
+                            </a>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" class="dropdown-item" data-filter="sort" data-pref="lastaccessed" data-value="ul.timeaccess desc" href="#" role="menuitem">
+                                Sort by last accessed
+                            </a>
+</li>
+</ul>
+</div>
+</div>
+<div class="dropdown mb-1">
+<button aria-expanded="false" aria-haspopup="true" aria-label="Student Example" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" id="displaydropdown" type="button">
+<span data-active-item-text="">
+                            Card
+                        </span>
+</button>
+<ul aria-labelledby="displaydropdown" class="dropdown-menu" data-show-active-item="" data-skip-active-class="true" role="menu">
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-current="true" aria-label="Student Example" class="dropdown-item" data-display-option="display" data-pref="card" data-value="card" href="#" role="menuitem">
+                                    Card
+                                </a>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-display-option="display" data-pref="list" data-value="list" href="#" role="menuitem">
+                                    List
+                                </a>
+</li>
+<li>
+<a aria-controls="courses-view-69d7a9199584e69d7a919707764" aria-label="Student Example" class="dropdown-item" data-display-option="display" data-pref="summary" data-value="summary" href="#" role="menuitem">
+                                    Summary
+                                </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="container-fluid p-0">
+<div data-customfieldname="" data-customfieldvalue="" data-display="card" data-displaycategories="on" data-grouping="all" data-newcourseurl="" data-nocoursesimg="https://moodle.example/theme/image.php/hillhead40/block_myoverview/999999/courses" data-paging="12" data-prev-display="card" data-region="courses-view" data-sort="fullname" data-totalcoursecount="33" id="courses-view-69d7a9199584e69d7a919707764">
+<div data-region="course-view-content">
+<div aria-hidden="true" data-region="loading-placeholder-content">
+<div class="card-grid row row-cols-1 row-cols-sm-2 row-cols-md-3 mx-0 flex-nowrap overflow-hidden" style="height: 13rem">
+<div class="col d-flex px-1"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+<div class="col d-flex px-1"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+<div class="col d-flex px-1"><div class="card border-0 px-1">
+<div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
+</div>
+<div class="card-body pe-1 course-info-container">
+<div class="bg-pulse-grey w-100" style="height: 1rem"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"></div>
+</div>
+</div>
+</section>
+<span id="sb-3"></span><section aria-label="Student Example" class="block_sitetext block card mb-3" data-block="sitetext" data-instance-id="999999" id="inst4970184" role="region">
+<div class="card-body p-3">
+<div class="card-text content mt-3">
+<div class="no-overflow"><h3>Moodle Dashboard</h3>
+<h4>Starred courses</h4>
+<p>Any courses that you ‘star’ from the My Courses page will appear on the Starred Courses block on the dashboard for quick access Please note: you may not see anything populated on this block if accessing Moodle for the first time)</p>
+<h4>Customise your Dashboard</h4>
+<ul>
+<li>Select <strong>Edit Mode</strong> from the top right navigation bar</li>
+<li>Select <strong>Add a Block</strong></li>
+</ul>
+<h4>Hide, delete or make changes to content blocks</h4>
+<ul>
+<li>In <strong>Edit Mode</strong> select the cogwheel at the top right of the content block.</li>
+<li>Select <strong>Configure, Hide or Delete</strong>.</li>
+<li>In Edit Mode you can <strong>Reset to Default</strong> to return your page layout to this one.</li>
+</ul></div>
+<div class="footer"></div>
+</div>
+</div>
+</section><a class="sr-only sr-only-focusable" href="#sb-5">Skip End of Course Evaluations</a>
+<section aria-labelledby="instance-999999-header" class="block_onlinesurvey block card mb-3" data-block="onlinesurvey" data-instance-id="999999" id="inst4970185" role="region">
+<div class="card-body p-3">
+<h3 class="h5 card-title d-inline" id="instance-999999-header">End of Course Evaluations</h3>
+<div class="card-text content mt-3">
+<div class="block_onlinesurvey_is-loading" id="block_onlinesurvey_surveys_content"><div class="block_onlinesurvey_surveys_loading"><div class="block_onlinesurvey_lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div><iframe class="block_onlinesurvey_compact" id="block_onlinesurvey_contentframe" src="about:blank"></iframe></div>
+<div class="footer"></div>
+</div>
+</div>
+</section>
+<span id="sb-5"></span></section></div>
+</section>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden="true" aria-labelledby="message-drawer-header-69d7a91af0f5569d7a9197077611" aria-modal="true" class="drawer bg-white hidden" data-region="right-hand-drawer" id="drawer-69d7a91af0f5569d7a9197077611" role="dialog" tabindex="-1">
+</div>
+</div>
+</body></html>

@@ -1,0 +1,47 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//Moodle Pty Ltd//NONSGML Moodle Version 999999.01//EN
+VERSION:2.0
+BEGIN:VEVENT
+UID:999999@moodle.example
+SUMMARY:Third Assessed Exercise -- Submission is due
+DESCRIPTION:Use this link to submit your single PDF file for the second ass
+	essed exercise.\n\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20260204T234420Z
+DTSTAMP:20260409T132652Z
+DTSTART:20260409T150000Z
+DTEND:20260409T150000Z
+CATEGORIES:ENG1234_2025
+END:VEVENT
+BEGIN:VEVENT
+UID:999999@moodle.example
+SUMMARY:Laboratory Write-up is due
+DESCRIPTION:This is an example description used to test ICS line folding. 
+	Write up _two_ experiments:\n\n	* Experiment A from the first lab sheet
+	\n	* An experiment of your choice from the second lab sheet\n	* A scan of
+	 your lab book notes\n\nSubmit a single PDF\, roughly 2-4 pages in total.\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20260129T141811Z
+DTSTAMP:20260409T132652Z
+DTSTART:20260420T225900Z
+DTEND:20260420T225900Z
+CATEGORIES:ENG1235_2025
+END:VEVENT
+BEGIN:VEVENT
+UID:999999@moodle.example
+SUMMARY:Example Individual Assignment\, 2026 is due
+DESCRIPTION:Upload your individual assignment here.\n\n100% of the assessme
+	nt will be awarded for a portfolio (PowerPoint file) of photographs\, capti
+	ons\, diagrams and tables.\n
+	
+CLASS:PUBLIC
+LAST-MODIFIED:20260226T185806Z
+DTSTAMP:20260409T132652Z
+DTSTART:20260423T150000Z
+DTEND:20260423T150000Z
+CATEGORIES:Example Course 3 (2025-26)_2025
+END:VEVENT
+END:VCALENDAR

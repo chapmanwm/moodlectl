@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+
+# Secrets and personal data: never commit these
+.env
+.env.*
+config.json
+cookies*.txt
+*cookies*.json
+moodle-corpus/
+corpus/
+_moodle/
+_downloads/
