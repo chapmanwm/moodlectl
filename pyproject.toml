@@ -4,7 +4,7 @@ version = "2.1.0"
 description = "Unofficial CLI for University of Glasgow Moodle: mirror courses (files, folders, pages, assignments, announcements, grades) into a local, diffable corpus"
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "Chapman Whitefield-Mathers" }]
+authors = [{ name = "chapmanwm" }]
 requires-python = ">=3.10"
 keywords = ["moodle", "university-of-glasgow", "uofg", "cli", "scraper", "agents"]
 classifiers = [
